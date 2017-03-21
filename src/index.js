@@ -2,6 +2,7 @@ import {
   isNil,
   mapValues,
   pickBy,
+  compact
 } from 'lodash'
 
 import {
@@ -58,7 +59,7 @@ export const spring = (startStyles, endStyles, options = {}) => {
   const parsed = parseStyles(startStyles, endStyles)
 
   // build keyframe styles based on parsed properties
-  parsed.forEach(({ prop, unit, start, end, rgb, fixed }) => {
+  parsed.forEach(({ prop, unit, start, end, rgb, fixed, action, position }, index) => {
     // if start and end values differ, interpolate between them
     if (!isNil(start) && !isNil(end)) {
       interpolate(start, end).forEach((interpolated, i) => {
@@ -66,7 +67,7 @@ export const spring = (startStyles, endStyles, options = {}) => {
         let value = Number(interpolated.toFixed(unit === 'px' ? 0 : precision))
         // add unit when applicable
         value = value === 0 || !unit ? value : `${value}${unit}`
-        result[i] = addValueToProperty(result[i], prop, value)
+        result[i] = addValueToProperty(result[i], prop, value, action)
       })
     // if hex representations of rgb colors are found
     } else if (!isNil(rgb)) {
@@ -77,13 +78,13 @@ export const spring = (startStyles, endStyles, options = {}) => {
       r.forEach((interpolated, i) => {
         const toRgb = rgbFloatToHex
         result[i] = addValueToProperty(result[i], prop,
-          `#${toRgb(r[i])}${toRgb(g[i])}${toRgb(b[i])}`)
+          `#${toRgb(r[i])}${toRgb(g[i])}${toRgb(b[i])}`, action)
       })
     // otherwise the value is fixed and can directly be appended to the
     // resulting keyframe styles
     } else if (!isNil(fixed)) {
       for (let i = 0; i < 101; i += 1) {
-        result[i] = addValueToProperty(result[i], prop, fixed)
+        result[i] = addValueToProperty(result[i], prop, fixed, action)
       }
     }
   })
@@ -92,7 +93,16 @@ export const spring = (startStyles, endStyles, options = {}) => {
   // to single ones and append % to the object keys
   const obsoleteValues = calculateObsoleteValues(result)
   result = mapValues(result, (value, i) => {
-    const result = mapValues(value, (value, key) => combine(key, value))
+    const result = mapValues(value, (value, key) => {
+      if (key === 'transform') {
+        const combinedValue = []
+        Object.keys(value).forEach(key => {
+          combinedValue.push(`${key}(${compact(value[key]).join(', ')})`)
+        })
+        return combine(key, combinedValue.join(', '))
+      }
+      return combine(key, value)
+    })
     return pickBy(
       result,
       (_, property) => obsoleteValues[property].indexOf(Number(i)) < 0,

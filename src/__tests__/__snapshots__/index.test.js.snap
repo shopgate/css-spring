@@ -189,6 +189,622 @@ Object {
 exports[`css-spring matches snapshots 2`] = `
 Object {
   "0%": Object {
+    "transform": "translate3d(0, 11.62%, 0)",
+  },
+  "1%": Object {
+    "transform": "translate3d(0, 14.64%, 0)",
+  },
+  "10%": Object {
+    "transform": "translate3d(0, 71.08%, 0)",
+  },
+  "100%": Object {
+    "transform": "translate3d(0, 99.87%, 0)",
+  },
+  "11%": Object {
+    "transform": "translate3d(0, 77.58%, 0)",
+  },
+  "12%": Object {
+    "transform": "translate3d(0, 83.72%, 0)",
+  },
+  "13%": Object {
+    "transform": "translate3d(0, 89.4%, 0)",
+  },
+  "14%": Object {
+    "transform": "translate3d(0, 94.6%, 0)",
+  },
+  "15%": Object {
+    "transform": "translate3d(0, 99.27%, 0)",
+  },
+  "16%": Object {
+    "transform": "translate3d(0, 103.39%, 0)",
+  },
+  "17%": Object {
+    "transform": "translate3d(0, 106.96%, 0)",
+  },
+  "18%": Object {
+    "transform": "translate3d(0, 109.98%, 0)",
+  },
+  "19%": Object {
+    "transform": "translate3d(0, 112.45%, 0)",
+  },
+  "2%": Object {
+    "transform": "translate3d(0, 18.83%, 0)",
+  },
+  "20%": Object {
+    "transform": "translate3d(0, 114.4%, 0)",
+  },
+  "21%": Object {
+    "transform": "translate3d(0, 115.86%, 0)",
+  },
+  "22%": Object {
+    "transform": "translate3d(0, 116.86%, 0)",
+  },
+  "23%": Object {
+    "transform": "translate3d(0, 117.43%, 0)",
+  },
+  "24%": Object {
+    "transform": "translate3d(0, 117.62%, 0)",
+  },
+  "25%": Object {
+    "transform": "translate3d(0, 117.47%, 0)",
+  },
+  "26%": Object {
+    "transform": "translate3d(0, 117.03%, 0)",
+  },
+  "27%": Object {
+    "transform": "translate3d(0, 116.33%, 0)",
+  },
+  "28%": Object {
+    "transform": "translate3d(0, 115.42%, 0)",
+  },
+  "29%": Object {
+    "transform": "translate3d(0, 114.35%, 0)",
+  },
+  "3%": Object {
+    "transform": "translate3d(0, 23.98%, 0)",
+  },
+  "30%": Object {
+    "transform": "translate3d(0, 113.14%, 0)",
+  },
+  "31%": Object {
+    "transform": "translate3d(0, 111.84%, 0)",
+  },
+  "32%": Object {
+    "transform": "translate3d(0, 110.49%, 0)",
+  },
+  "33%": Object {
+    "transform": "translate3d(0, 109.11%, 0)",
+  },
+  "34%": Object {
+    "transform": "translate3d(0, 107.73%, 0)",
+  },
+  "35%": Object {
+    "transform": "translate3d(0, 106.37%, 0)",
+  },
+  "36%": Object {
+    "transform": "translate3d(0, 105.07%, 0)",
+  },
+  "37%": Object {
+    "transform": "translate3d(0, 103.83%, 0)",
+  },
+  "38%": Object {
+    "transform": "translate3d(0, 102.67%, 0)",
+  },
+  "39%": Object {
+    "transform": "translate3d(0, 101.6%, 0)",
+  },
+  "4%": Object {
+    "transform": "translate3d(0, 29.88%, 0)",
+  },
+  "40%": Object {
+    "transform": "translate3d(0, 100.63%, 0)",
+  },
+  "41%": Object {
+    "transform": "translate3d(0, 99.77%, 0)",
+  },
+  "42%": Object {
+    "transform": "translate3d(0, 99.01%, 0)",
+  },
+  "43%": Object {
+    "transform": "translate3d(0, 98.36%, 0)",
+  },
+  "44%": Object {
+    "transform": "translate3d(0, 97.82%, 0)",
+  },
+  "45%": Object {
+    "transform": "translate3d(0, 97.38%, 0)",
+  },
+  "46%": Object {
+    "transform": "translate3d(0, 97.05%, 0)",
+  },
+  "47%": Object {
+    "transform": "translate3d(0, 96.8%, 0)",
+  },
+  "48%": Object {
+    "transform": "translate3d(0, 96.65%, 0)",
+  },
+  "49%": Object {
+    "transform": "translate3d(0, 96.57%, 0)",
+  },
+  "5%": Object {
+    "transform": "translate3d(0, 36.33%, 0)",
+  },
+  "50%": Object {
+    "transform": "translate3d(0, 96.56%, 0)",
+  },
+  "51%": Object {
+    "transform": "translate3d(0, 96.62%, 0)",
+  },
+  "52%": Object {
+    "transform": "translate3d(0, 96.73%, 0)",
+  },
+  "53%": Object {
+    "transform": "translate3d(0, 96.89%, 0)",
+  },
+  "54%": Object {
+    "transform": "translate3d(0, 97.08%, 0)",
+  },
+  "55%": Object {
+    "transform": "translate3d(0, 97.3%, 0)",
+  },
+  "56%": Object {
+    "transform": "translate3d(0, 97.55%, 0)",
+  },
+  "57%": Object {
+    "transform": "translate3d(0, 97.81%, 0)",
+  },
+  "58%": Object {
+    "transform": "translate3d(0, 98.07%, 0)",
+  },
+  "59%": Object {
+    "transform": "translate3d(0, 98.34%, 0)",
+  },
+  "6%": Object {
+    "transform": "translate3d(0, 43.16%, 0)",
+  },
+  "60%": Object {
+    "transform": "translate3d(0, 98.61%, 0)",
+  },
+  "61%": Object {
+    "transform": "translate3d(0, 98.87%, 0)",
+  },
+  "62%": Object {
+    "transform": "translate3d(0, 99.12%, 0)",
+  },
+  "63%": Object {
+    "transform": "translate3d(0, 99.36%, 0)",
+  },
+  "64%": Object {
+    "transform": "translate3d(0, 99.58%, 0)",
+  },
+  "65%": Object {
+    "transform": "translate3d(0, 99.78%, 0)",
+  },
+  "66%": Object {
+    "transform": "translate3d(0, 99.96%, 0)",
+  },
+  "67%": Object {
+    "transform": "translate3d(0, 100.12%, 0)",
+  },
+  "68%": Object {
+    "transform": "translate3d(0, 100.25%, 0)",
+  },
+  "69%": Object {
+    "transform": "translate3d(0, 100.37%, 0)",
+  },
+  "7%": Object {
+    "transform": "translate3d(0, 50.19%, 0)",
+  },
+  "70%": Object {
+    "transform": "translate3d(0, 100.47%, 0)",
+  },
+  "71%": Object {
+    "transform": "translate3d(0, 100.54%, 0)",
+  },
+  "72%": Object {
+    "transform": "translate3d(0, 100.6%, 0)",
+  },
+  "73%": Object {
+    "transform": "translate3d(0, 100.64%, 0)",
+  },
+  "74%": Object {
+    "transform": "translate3d(0, 100.66%, 0)",
+  },
+  "75%": Object {
+    "transform": "translate3d(0, 100.67%, 0)",
+  },
+  "76%": Object {
+    "transform": "translate3d(0, 100.67%, 0)",
+  },
+  "77%": Object {
+    "transform": "translate3d(0, 100.65%, 0)",
+  },
+  "78%": Object {
+    "transform": "translate3d(0, 100.63%, 0)",
+  },
+  "79%": Object {
+    "transform": "translate3d(0, 100.59%, 0)",
+  },
+  "8%": Object {
+    "transform": "translate3d(0, 57.27%, 0)",
+  },
+  "80%": Object {
+    "transform": "translate3d(0, 100.55%, 0)",
+  },
+  "81%": Object {
+    "transform": "translate3d(0, 100.51%, 0)",
+  },
+  "82%": Object {
+    "transform": "translate3d(0, 100.46%, 0)",
+  },
+  "83%": Object {
+    "transform": "translate3d(0, 100.41%, 0)",
+  },
+  "84%": Object {
+    "transform": "translate3d(0, 100.35%, 0)",
+  },
+  "85%": Object {
+    "transform": "translate3d(0, 100.3%, 0)",
+  },
+  "86%": Object {
+    "transform": "translate3d(0, 100.25%, 0)",
+  },
+  "87%": Object {
+    "transform": "translate3d(0, 100.2%, 0)",
+  },
+  "88%": Object {
+    "transform": "translate3d(0, 100.15%, 0)",
+  },
+  "89%": Object {
+    "transform": "translate3d(0, 100.11%, 0)",
+  },
+  "9%": Object {
+    "transform": "translate3d(0, 64.27%, 0)",
+  },
+  "90%": Object {
+    "transform": "translate3d(0, 100.06%, 0)",
+  },
+  "91%": Object {
+    "transform": "translate3d(0, 100.03%, 0)",
+  },
+  "92%": Object {
+    "transform": "translate3d(0, 99.99%, 0)",
+  },
+  "93%": Object {
+    "transform": "translate3d(0, 99.96%, 0)",
+  },
+  "94%": Object {
+    "transform": "translate3d(0, 99.94%, 0)",
+  },
+  "95%": Object {
+    "transform": "translate3d(0, 99.92%, 0)",
+  },
+  "96%": Object {
+    "transform": "translate3d(0, 99.9%, 0)",
+  },
+  "97%": Object {
+    "transform": "translate3d(0, 99.89%, 0)",
+  },
+  "98%": Object {
+    "transform": "translate3d(0, 99.88%, 0)",
+  },
+  "99%": Object {
+    "transform": "translate3d(0, 99.87%, 0)",
+  },
+}
+`;
+
+exports[`css-spring matches snapshots 3`] = `
+Object {
+  "0%": Object {
+    "transform": "translate3d(0, 11.62%, 0), scale3d(0, 0.98, 0)",
+  },
+  "1%": Object {
+    "transform": "translate3d(0, 14.64%, 0), scale3d(0, 0.95, 0)",
+  },
+  "10%": Object {
+    "transform": "translate3d(0, 71.08%, 0), scale3d(0, 0.32, 0)",
+  },
+  "100%": Object {
+    "transform": "translate3d(0, 99.87%, 0), scale3d(0, 0)",
+  },
+  "11%": Object {
+    "transform": "translate3d(0, 77.58%, 0), scale3d(0, 0.25, 0)",
+  },
+  "12%": Object {
+    "transform": "translate3d(0, 83.72%, 0), scale3d(0, 0.18, 0)",
+  },
+  "13%": Object {
+    "transform": "translate3d(0, 89.4%, 0), scale3d(0, 0.12, 0)",
+  },
+  "14%": Object {
+    "transform": "translate3d(0, 94.6%, 0), scale3d(0, 0.06, 0)",
+  },
+  "15%": Object {
+    "transform": "translate3d(0, 99.27%, 0), scale3d(0, 0.01, 0)",
+  },
+  "16%": Object {
+    "transform": "translate3d(0, 103.39%, 0), scale3d(0, -0.04, 0)",
+  },
+  "17%": Object {
+    "transform": "translate3d(0, 106.96%, 0), scale3d(0, -0.08, 0)",
+  },
+  "18%": Object {
+    "transform": "translate3d(0, 109.98%, 0), scale3d(0, -0.11, 0)",
+  },
+  "19%": Object {
+    "transform": "translate3d(0, 112.45%, 0), scale3d(0, -0.14, 0)",
+  },
+  "2%": Object {
+    "transform": "translate3d(0, 18.83%, 0), scale3d(0, 0.9, 0)",
+  },
+  "20%": Object {
+    "transform": "translate3d(0, 114.4%, 0), scale3d(0, -0.16, 0)",
+  },
+  "21%": Object {
+    "transform": "translate3d(0, 115.86%, 0), scale3d(0, -0.18, 0)",
+  },
+  "22%": Object {
+    "transform": "translate3d(0, 116.86%, 0), scale3d(0, -0.19, 0)",
+  },
+  "23%": Object {
+    "transform": "translate3d(0, 117.43%, 0), scale3d(0, -0.19, 0)",
+  },
+  "24%": Object {
+    "transform": "translate3d(0, 117.62%, 0), scale3d(0, -0.2, 0)",
+  },
+  "25%": Object {
+    "transform": "translate3d(0, 117.47%, 0), scale3d(0, -0.19, 0)",
+  },
+  "26%": Object {
+    "transform": "translate3d(0, 117.03%, 0), scale3d(0, -0.19, 0)",
+  },
+  "27%": Object {
+    "transform": "translate3d(0, 116.33%, 0), scale3d(0, -0.18, 0)",
+  },
+  "28%": Object {
+    "transform": "translate3d(0, 115.42%, 0), scale3d(0, -0.17, 0)",
+  },
+  "29%": Object {
+    "transform": "translate3d(0, 114.35%, 0), scale3d(0, -0.16, 0)",
+  },
+  "3%": Object {
+    "transform": "translate3d(0, 23.98%, 0), scale3d(0, 0.84, 0)",
+  },
+  "30%": Object {
+    "transform": "translate3d(0, 113.14%, 0), scale3d(0, -0.15, 0)",
+  },
+  "31%": Object {
+    "transform": "translate3d(0, 111.84%, 0), scale3d(0, -0.13, 0)",
+  },
+  "32%": Object {
+    "transform": "translate3d(0, 110.49%, 0), scale3d(0, -0.12, 0)",
+  },
+  "33%": Object {
+    "transform": "translate3d(0, 109.11%, 0), scale3d(0, -0.1, 0)",
+  },
+  "34%": Object {
+    "transform": "translate3d(0, 107.73%, 0), scale3d(0, -0.09, 0)",
+  },
+  "35%": Object {
+    "transform": "translate3d(0, 106.37%, 0), scale3d(0, -0.07, 0)",
+  },
+  "36%": Object {
+    "transform": "translate3d(0, 105.07%, 0), scale3d(0, -0.06, 0)",
+  },
+  "37%": Object {
+    "transform": "translate3d(0, 103.83%, 0), scale3d(0, -0.04, 0)",
+  },
+  "38%": Object {
+    "transform": "translate3d(0, 102.67%, 0), scale3d(0, -0.03, 0)",
+  },
+  "39%": Object {
+    "transform": "translate3d(0, 101.6%, 0), scale3d(0, -0.02, 0)",
+  },
+  "4%": Object {
+    "transform": "translate3d(0, 29.88%, 0), scale3d(0, 0.78, 0)",
+  },
+  "40%": Object {
+    "transform": "translate3d(0, 100.63%, 0), scale3d(0, -0.01, 0)",
+  },
+  "41%": Object {
+    "transform": "translate3d(0, 99.77%, 0), scale3d(0, 0)",
+  },
+  "42%": Object {
+    "transform": "translate3d(0, 99.01%, 0), scale3d(0, 0.01, 0)",
+  },
+  "43%": Object {
+    "transform": "translate3d(0, 98.36%, 0), scale3d(0, 0.02, 0)",
+  },
+  "44%": Object {
+    "transform": "translate3d(0, 97.82%, 0), scale3d(0, 0.02, 0)",
+  },
+  "45%": Object {
+    "transform": "translate3d(0, 97.38%, 0), scale3d(0, 0.03, 0)",
+  },
+  "46%": Object {
+    "transform": "translate3d(0, 97.05%, 0), scale3d(0, 0.03, 0)",
+  },
+  "47%": Object {
+    "transform": "translate3d(0, 96.8%, 0), scale3d(0, 0.04, 0)",
+  },
+  "48%": Object {
+    "transform": "translate3d(0, 96.65%, 0), scale3d(0, 0.04, 0)",
+  },
+  "49%": Object {
+    "transform": "translate3d(0, 96.57%, 0), scale3d(0, 0.04, 0)",
+  },
+  "5%": Object {
+    "transform": "translate3d(0, 36.33%, 0), scale3d(0, 0.71, 0)",
+  },
+  "50%": Object {
+    "transform": "translate3d(0, 96.56%, 0), scale3d(0, 0.04, 0)",
+  },
+  "51%": Object {
+    "transform": "translate3d(0, 96.62%, 0), scale3d(0, 0.04, 0)",
+  },
+  "52%": Object {
+    "transform": "translate3d(0, 96.73%, 0), scale3d(0, 0.04, 0)",
+  },
+  "53%": Object {
+    "transform": "translate3d(0, 96.89%, 0), scale3d(0, 0.03, 0)",
+  },
+  "54%": Object {
+    "transform": "translate3d(0, 97.08%, 0), scale3d(0, 0.03, 0)",
+  },
+  "55%": Object {
+    "transform": "translate3d(0, 97.3%, 0), scale3d(0, 0.03, 0)",
+  },
+  "56%": Object {
+    "transform": "translate3d(0, 97.55%, 0), scale3d(0, 0.03, 0)",
+  },
+  "57%": Object {
+    "transform": "translate3d(0, 97.81%, 0), scale3d(0, 0.02, 0)",
+  },
+  "58%": Object {
+    "transform": "translate3d(0, 98.07%, 0), scale3d(0, 0.02, 0)",
+  },
+  "59%": Object {
+    "transform": "translate3d(0, 98.34%, 0), scale3d(0, 0.02, 0)",
+  },
+  "6%": Object {
+    "transform": "translate3d(0, 43.16%, 0), scale3d(0, 0.63, 0)",
+  },
+  "60%": Object {
+    "transform": "translate3d(0, 98.61%, 0), scale3d(0, 0.02, 0)",
+  },
+  "61%": Object {
+    "transform": "translate3d(0, 98.87%, 0), scale3d(0, 0.01, 0)",
+  },
+  "62%": Object {
+    "transform": "translate3d(0, 99.12%, 0), scale3d(0, 0.01, 0)",
+  },
+  "63%": Object {
+    "transform": "translate3d(0, 99.36%, 0), scale3d(0, 0.01, 0)",
+  },
+  "64%": Object {
+    "transform": "translate3d(0, 99.58%, 0), scale3d(0, 0)",
+  },
+  "65%": Object {
+    "transform": "translate3d(0, 99.78%, 0), scale3d(0, 0)",
+  },
+  "66%": Object {
+    "transform": "translate3d(0, 99.96%, 0), scale3d(0, 0)",
+  },
+  "67%": Object {
+    "transform": "translate3d(0, 100.12%, 0), scale3d(0, 0)",
+  },
+  "68%": Object {
+    "transform": "translate3d(0, 100.25%, 0), scale3d(0, 0)",
+  },
+  "69%": Object {
+    "transform": "translate3d(0, 100.37%, 0), scale3d(0, 0)",
+  },
+  "7%": Object {
+    "transform": "translate3d(0, 50.19%, 0), scale3d(0, 0.55, 0)",
+  },
+  "70%": Object {
+    "transform": "translate3d(0, 100.47%, 0), scale3d(0, -0.01, 0)",
+  },
+  "71%": Object {
+    "transform": "translate3d(0, 100.54%, 0), scale3d(0, -0.01, 0)",
+  },
+  "72%": Object {
+    "transform": "translate3d(0, 100.6%, 0), scale3d(0, -0.01, 0)",
+  },
+  "73%": Object {
+    "transform": "translate3d(0, 100.64%, 0), scale3d(0, -0.01, 0)",
+  },
+  "74%": Object {
+    "transform": "translate3d(0, 100.66%, 0), scale3d(0, -0.01, 0)",
+  },
+  "75%": Object {
+    "transform": "translate3d(0, 100.67%, 0), scale3d(0, 0)",
+  },
+  "76%": Object {
+    "transform": "translate3d(0, 100.67%, 0), scale3d(0, 0)",
+  },
+  "77%": Object {
+    "transform": "translate3d(0, 100.65%, 0), scale3d(0, 0)",
+  },
+  "78%": Object {
+    "transform": "translate3d(0, 100.63%, 0), scale3d(0, 0)",
+  },
+  "79%": Object {
+    "transform": "translate3d(0, 100.59%, 0), scale3d(0, 0)",
+  },
+  "8%": Object {
+    "transform": "translate3d(0, 57.27%, 0), scale3d(0, 0.47, 0)",
+  },
+  "80%": Object {
+    "transform": "translate3d(0, 100.55%, 0), scale3d(0, 0)",
+  },
+  "81%": Object {
+    "transform": "translate3d(0, 100.51%, 0), scale3d(0, 0)",
+  },
+  "82%": Object {
+    "transform": "translate3d(0, 100.46%, 0), scale3d(0, 0)",
+  },
+  "83%": Object {
+    "transform": "translate3d(0, 100.41%, 0), scale3d(0, 0)",
+  },
+  "84%": Object {
+    "transform": "translate3d(0, 100.35%, 0), scale3d(0, 0)",
+  },
+  "85%": Object {
+    "transform": "translate3d(0, 100.3%, 0), scale3d(0, 0)",
+  },
+  "86%": Object {
+    "transform": "translate3d(0, 100.25%, 0), scale3d(0, 0)",
+  },
+  "87%": Object {
+    "transform": "translate3d(0, 100.2%, 0), scale3d(0, 0)",
+  },
+  "88%": Object {
+    "transform": "translate3d(0, 100.15%, 0), scale3d(0, 0)",
+  },
+  "89%": Object {
+    "transform": "translate3d(0, 100.11%, 0), scale3d(0, 0)",
+  },
+  "9%": Object {
+    "transform": "translate3d(0, 64.27%, 0), scale3d(0, 0.4, 0)",
+  },
+  "90%": Object {
+    "transform": "translate3d(0, 100.06%, 0), scale3d(0, 0)",
+  },
+  "91%": Object {
+    "transform": "translate3d(0, 100.03%, 0), scale3d(0, 0)",
+  },
+  "92%": Object {
+    "transform": "translate3d(0, 99.99%, 0), scale3d(0, 0)",
+  },
+  "93%": Object {
+    "transform": "translate3d(0, 99.96%, 0), scale3d(0, 0)",
+  },
+  "94%": Object {
+    "transform": "translate3d(0, 99.94%, 0), scale3d(0, 0)",
+  },
+  "95%": Object {
+    "transform": "translate3d(0, 99.92%, 0), scale3d(0, 0)",
+  },
+  "96%": Object {
+    "transform": "translate3d(0, 99.9%, 0), scale3d(0, 0)",
+  },
+  "97%": Object {
+    "transform": "translate3d(0, 99.89%, 0), scale3d(0, 0)",
+  },
+  "98%": Object {
+    "transform": "translate3d(0, 99.88%, 0), scale3d(0, 0)",
+  },
+  "99%": Object {
+    "transform": "translate3d(0, 99.87%, 0), scale3d(0, 0)",
+  },
+}
+`;
+
+exports[`css-spring matches snapshots 4`] = `
+Object {
+  "0%": Object {
     "background": "#bbd653",
     "padding-left": "-48px",
   },
@@ -432,7 +1048,7 @@ Object {
 }
 `;
 
-exports[`css-spring matches snapshots 3`] = `
+exports[`css-spring matches snapshots 5`] = `
 Object {
   "0%": Object {
     "border": "1px solid #f00",

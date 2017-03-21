@@ -28,7 +28,16 @@ export const getInterpolator = (stiffness, damping) => {
 
 // adds a value to an objects property.
 // when a property value exists, forms an array of values.
-export const addValueToProperty = (obj = {}, prop, value) => {
+export const addValueToProperty = (obj = {}, prop, value, action) => {
+  if (prop === 'transform' && action) {
+    if (typeof obj[prop] === 'undefined') {
+      obj[prop] = { [action]: value }
+    } else {
+      obj[prop][action] = [].concat(obj[prop][action], value)
+    }
+    return obj
+  }
+
   return Object.assign(obj, {
     [prop]: obj[prop] === undefined ? value : [].concat(obj[prop], value),
   })

@@ -23,6 +23,58 @@ const spaceCombinedProps = [
   'padding',
 ]
 
+const commaCombinedProps = [
+  'transform',
+]
+
+export const parseTransform = (value) => {
+  const valueRegex = /([\w]*)\((.*)\)/
+  const styles = value.split('),');
+  const result = []
+
+  styles.map(style => {
+    if (style[style.length - 1] !== ')') {
+      style = `${style})`
+    }
+    const inner = []
+    const values = valueRegex.exec(style)
+    const action = values[1]
+    values[2].split(',').forEach((value, index) => {
+      inner.push({
+        action,
+        value: value.trim(),
+        position: index,
+      })
+    })
+    result.push(inner)
+  })
+
+  return result
+}
+
+export const handleTransform = (prop, start, end) => {
+  if (commaCombinedProps.indexOf(prop) === -1) {
+    return null;
+  }
+
+  const startParsed = parseTransform(start)
+  const endParsed = parseTransform(end)
+
+  const result = []
+
+  startParsed.map((startPair, index) => {
+    startPair.map((pair, pairIndex) => {
+      result.push({
+        prop,
+        action: pair.action,
+        position: pair.position,
+        ...parseValues(pair.value, endParsed[index][pairIndex].value),
+      })
+    })
+  })
+  return result
+}
+
 // splits a css property value into multiple values
 export const split = (key, value) => {
   if (spaceCombinedProps.indexOf(key) >= 0) {
@@ -116,24 +168,29 @@ export const parseStyles = (startStyles, endStyles) => {
       break
     }
 
-    // in case of combined values, split them!
-    const startValues = [].concat(split(prop, startStyles[prop]))
-    const endValues = [].concat(split(prop, endStyles[prop]))
+    const transforms = handleTransform(prop, startStyles[prop], endStyles[prop])
+    if (transforms) {
+      result = result.concat(transforms)
+    } else {
+      // in case of combined values, split them!
+      const startValues = [].concat(split(prop, startStyles[prop]))
+      const endValues = [].concat(split(prop, endStyles[prop]))
 
-    // only animate props that have the same number of values
-    if (startValues.length !== endValues.length) {
-      break
-    }
+      // only animate props that have the same number of values
+      if (startValues.length !== endValues.length) {
+        break
+      }
 
-    // parse start and end value combinations
-    const parsedValues = compact(map(startValues, (value, key) => {
-      const parsed = parseValues(value, endValues[key])
-      return parsed ? { prop, ...parsed } : null
-    }))
+      // parse start and end value combinations
+      const parsedValues = compact(map(startValues, (value, key) => {
+        const parsed = parseValues(value, endValues[key])
+        return parsed ? { prop, ...parsed } : null
+      }))
 
-    // when parsing was successful for every combination, use the results
-    if (parsedValues.length === startValues.length) {
-      result = result.concat(parsedValues)
+      // when parsing was successful for every combination, use the results
+      if (parsedValues.length === startValues.length) {
+        result = result.concat(parsedValues)
+      }
     }
   }
 

@@ -14,6 +14,24 @@ describe('css-spring', () => {
     expect(
       spring(
         {
+          transform: 'translate3d(0, 10%, 0)',
+        }, {
+          transform: 'translate3d(0, 100%, 0)',
+        })
+    ).toMatchSnapshot()
+
+    expect(
+      spring(
+        {
+          transform: 'translate3d(0, 10%, 0), scale3d(0, 1, 0)',
+        }, {
+          transform: 'translate3d(0, 100%, 0), scale3d(0, 0, 0)',
+        })
+    ).toMatchSnapshot()
+
+    expect(
+      spring(
+        {
           'padding-left': '-50px',
           background: '#bada55',
         },

@@ -50,6 +50,33 @@ describe('parse', () => {
         { prop: 'opacity', start: 0, end: 1, unit: '' },
       ])
     })
+    test('tests transform animation with one actions', () => {
+      expect(
+        parseStyles(
+          { transform: 'translate3d(1%, 2%, 3%)' },
+          { transform: 'translate3d(100%, 2%, 3%)' },
+        )
+      ).toEqual([
+        { prop: 'transform', action: 'translate3d', position: 0, start: 1, end: 100, unit: '%' },
+        { prop: 'transform', action: 'translate3d', position: 1, fixed: '2%' },
+        { prop: 'transform', action: 'translate3d', position: 2, fixed: '3%' },
+      ])
+    })
+    test('tests transform animation with two actions', () => {
+      expect(
+        parseStyles(
+          { transform: 'translate3d(1%, 2%, 3%), scale3d(0, 0, 0)' },
+          { transform: 'translate3d(100%, 2%, 3%), scale3d(0, 1, 0)' },
+        )
+      ).toEqual([
+        { prop: 'transform', action: 'translate3d', position: 0, start: 1, end: 100, unit: '%' },
+        { prop: 'transform', action: 'translate3d', position: 1, fixed: '2%' },
+        { prop: 'transform', action: 'translate3d', position: 2, fixed: '3%' },
+        { prop: 'transform', action: 'scale3d', position: 0, fixed: '0' },
+        { prop: 'transform', action: 'scale3d', position: 1, start: 0, end: 1, unit: '' },
+        { prop: 'transform', action: 'scale3d', position: 2, fixed: '0' },
+      ])
+    })
   })
 
   describe('parseValues', () => {
