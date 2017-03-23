@@ -5,23 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseStyles = exports.parseValues = exports.parseHexColor = exports.parseNumber = exports.combine = exports.split = exports.handleTransform = exports.parseTransform = undefined;
 
-var _map2 = require('lodash/map');
-
-var _map3 = _interopRequireDefault(_map2);
-
-var _isArray2 = require('lodash/isArray');
-
-var _isArray3 = _interopRequireDefault(_isArray2);
-
-var _compact2 = require('lodash/compact');
-
-var _compact3 = _interopRequireDefault(_compact2);
-
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _lodash = require('lodash');
 
 // css properties that can have values joined by spaces
 var spaceCombinedProps = ['-moz-outline-radius', '-webkit-text-stroke', 'background', 'border', 'border-bottom', 'border-color', 'border-left', 'border-radius', 'border-right', 'border-spacing', 'border-top', 'border-width', 'margin', 'outline', 'padding'];
@@ -87,7 +75,7 @@ var split = exports.split = function split(key, value) {
 
 // combines multiple values to a single css property value
 var combine = exports.combine = function combine(key, value) {
-  return (0, _isArray3.default)(value) && spaceCombinedProps.indexOf(key) >= 0 ? value.join(' ') : value;
+  return (0, _lodash.isArray)(value) && spaceCombinedProps.indexOf(key) >= 0 ? value.join(' ') : value;
 };
 
 // this splits css numbers from units.
@@ -116,10 +104,10 @@ var parseHexColor = exports.parseHexColor = function parseHexColor(color) {
       hex = _ref4[1];
 
   if (hex) {
-    hex = hex.length === 3 ? (0, _map3.default)(hex, function (v) {
+    hex = hex.length === 3 ? (0, _lodash.map)(hex, function (v) {
       return '' + v + v;
     }).join('') : hex;
-    return (0, _map3.default)(hex.match(/.{1,2}/g), function (v) {
+    return (0, _lodash.map)(hex.match(/.{1,2}/g), function (v) {
       return parseInt(v, 16);
     });
   }
@@ -192,7 +180,7 @@ var parseStyles = exports.parseStyles = function parseStyles(startStyles, endSty
       }
 
       // parse start and end value combinations
-      var parsedValues = (0, _compact3.default)((0, _map3.default)(startValues, function (value, key) {
+      var parsedValues = (0, _lodash.compact)((0, _lodash.map)(startValues, function (value, key) {
         var parsed = parseValues(value, endValues[key]);
         return parsed ? _extends({ prop: prop }, parsed) : null;
       }));

@@ -5,27 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.toString = exports.spring = undefined;
 
-var _compact2 = require('lodash/compact');
-
-var _compact3 = _interopRequireDefault(_compact2);
-
-var _pickBy2 = require('lodash/pickBy');
-
-var _pickBy3 = _interopRequireDefault(_pickBy2);
-
-var _mapValues2 = require('lodash/mapValues');
-
-var _mapValues3 = _interopRequireDefault(_mapValues2);
-
-var _isNil2 = require('lodash/isNil');
-
-var _isNil3 = _interopRequireDefault(_isNil2);
+var _lodash = require('lodash');
 
 var _parse = require('./parse');
 
 var _util = require('./util');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // spring presets. selected combinations of stiffness/damping.
 var presets = {
@@ -80,7 +64,7 @@ var spring = exports.spring = function spring(startStyles, endStyles) {
         position = _ref.position;
 
     // if start and end values differ, interpolate between them
-    if (!(0, _isNil3.default)(start) && !(0, _isNil3.default)(end)) {
+    if (!(0, _lodash.isNil)(start) && !(0, _lodash.isNil)(end)) {
       interpolate(start, end).forEach(function (interpolated, i) {
         // round to desired precision (except when interpolating pixels)
         var value = Number(interpolated.toFixed(unit === 'px' ? 0 : precision));
@@ -89,7 +73,7 @@ var spring = exports.spring = function spring(startStyles, endStyles) {
         result[i] = (0, _util.addValueToProperty)(result[i], prop, value, action);
       });
       // if hex representations of rgb colors are found
-    } else if (!(0, _isNil3.default)(rgb)) {
+    } else if (!(0, _lodash.isNil)(rgb)) {
       // interpolate each color component separately
       var r = interpolate(rgb[0][0], rgb[1][0]);
       var g = interpolate(rgb[0][1], rgb[1][1]);
@@ -100,7 +84,7 @@ var spring = exports.spring = function spring(startStyles, endStyles) {
       });
       // otherwise the value is fixed and can directly be appended to the
       // resulting keyframe styles
-    } else if (!(0, _isNil3.default)(fixed)) {
+    } else if (!(0, _lodash.isNil)(fixed)) {
       for (var i = 0; i < 101; i += 1) {
         result[i] = (0, _util.addValueToProperty)(result[i], prop, fixed, action);
       }
@@ -110,18 +94,18 @@ var spring = exports.spring = function spring(startStyles, endStyles) {
   // remove obsolete values, combine multiple values for the same property
   // to single ones and append % to the object keys
   var obsoleteValues = (0, _util.calculateObsoleteValues)(result);
-  result = (0, _mapValues3.default)(result, function (value, i) {
-    var result = (0, _mapValues3.default)(value, function (value, key) {
+  result = (0, _lodash.mapValues)(result, function (value, i) {
+    var result = (0, _lodash.mapValues)(value, function (value, key) {
       if (key === 'transform') {
         var combinedValue = [];
         Object.keys(value).forEach(function (key) {
-          combinedValue.push(key + '(' + (0, _compact3.default)(value[key]).join(', ') + ')');
+          combinedValue.push(key + '(' + (0, _lodash.compact)(value[key]).join(', ') + ')');
         });
         return (0, _parse.combine)(key, combinedValue.join(', '));
       }
       return (0, _parse.combine)(key, value);
     });
-    return (0, _pickBy3.default)(result, function (_, property) {
+    return (0, _lodash.pickBy)(result, function (_, property) {
       return obsoleteValues[property].indexOf(Number(i)) < 0;
     });
   });

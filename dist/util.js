@@ -5,35 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.rgbFloatToHex = exports.toString = exports.omitEmptyValues = exports.appendToKeys = exports.calculateObsoleteValues = exports.calculateObsoleteFrames = exports.addValueToProperty = exports.getInterpolator = undefined;
 
-var _reduce2 = require('lodash/reduce');
-
-var _reduce3 = _interopRequireDefault(_reduce2);
-
-var _pickBy2 = require('lodash/pickBy');
-
-var _pickBy3 = _interopRequireDefault(_pickBy2);
-
-var _negate2 = require('lodash/negate');
-
-var _negate3 = _interopRequireDefault(_negate2);
-
-var _mapKeys2 = require('lodash/mapKeys');
-
-var _mapKeys3 = _interopRequireDefault(_mapKeys2);
-
-var _map2 = require('lodash/map');
-
-var _map3 = _interopRequireDefault(_map2);
-
-var _isEmpty2 = require('lodash/isEmpty');
-
-var _isEmpty3 = _interopRequireDefault(_isEmpty2);
-
-var _compact2 = require('lodash/compact');
-
-var _compact3 = _interopRequireDefault(_compact2);
-
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _lodash = require('lodash');
 
 var _interpolate3 = require('./interpolate');
 
@@ -52,7 +26,7 @@ var getInterpolator = exports.getInterpolator = function getInterpolator(stiffne
   return function (value, end, velocity) {
     var interpolated = [value].concat(_toConsumableArray(Array(99)), [end]);
 
-    return (0, _map3.default)(interpolated, function () {
+    return (0, _lodash.map)(interpolated, function () {
       var _interpolate = (0, _interpolate4.default)(0.01, value, velocity || 0, end, stiffness, damping);
 
       var _interpolate2 = _slicedToArray(_interpolate, 2);
@@ -88,7 +62,7 @@ var addValueToProperty = exports.addValueToProperty = function addValueToPropert
 // based on an array with interpolated values for a property, return
 // an array with indices that are obsolete.
 var calculateObsoleteFrames = exports.calculateObsoleteFrames = function calculateObsoleteFrames(arr, prop) {
-  return (0, _compact3.default)((0, _map3.default)(arr, function (value, i, arr) {
+  return (0, _lodash.compact)((0, _lodash.map)(arr, function (value, i, arr) {
     var current = JSON.stringify(value[prop]);
     var previous = JSON.stringify((arr[i - 1] || {})[prop]);
     var next = JSON.stringify((arr[i + 1] || {})[prop]);
@@ -101,22 +75,22 @@ var calculateObsoleteFrames = exports.calculateObsoleteFrames = function calcula
 
 // calculate obsolete values based on an array of properties and
 var calculateObsoleteValues = exports.calculateObsoleteValues = function calculateObsoleteValues(keyframes) {
-  return (0, _reduce3.default)(Object.keys(keyframes[0]), function (accumulator, property) {
+  return (0, _lodash.reduce)(Object.keys(keyframes[0]), function (accumulator, property) {
     return Object.assign(accumulator, _defineProperty({}, property, calculateObsoleteFrames(Object.values(keyframes), property)));
   }, {});
 };
 
 // append a string to every key of an object
 var appendToKeys = exports.appendToKeys = function appendToKeys(obj, suffix) {
-  return (0, _mapKeys3.default)(obj, function (_, key) {
+  return (0, _lodash.mapKeys)(obj, function (_, key) {
     return '' + key + suffix;
   });
 };
 
 // omit all properties with empty values from an object
 var omitEmptyValues = exports.omitEmptyValues = function omitEmptyValues(obj) {
-  return (0, _pickBy3.default)(obj, function (value) {
-    return (0, _negate3.default)(_isEmpty3.default)(value);
+  return (0, _lodash.pickBy)(obj, function (value) {
+    return (0, _lodash.negate)(_lodash.isEmpty)(value);
   });
 };
 
