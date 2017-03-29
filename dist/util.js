@@ -76,7 +76,9 @@ var calculateObsoleteFrames = exports.calculateObsoleteFrames = function calcula
 // calculate obsolete values based on an array of properties and
 var calculateObsoleteValues = exports.calculateObsoleteValues = function calculateObsoleteValues(keyframes) {
   return (0, _lodash.reduce)(Object.keys(keyframes[0]), function (accumulator, property) {
-    return Object.assign(accumulator, _defineProperty({}, property, calculateObsoleteFrames(Object.values(keyframes), property)));
+    return Object.assign(accumulator, _defineProperty({}, property, calculateObsoleteFrames(Object.keys(keyframes).map(function (key) {
+      return keyframes[key];
+    }), property)));
   }, {});
 };
 

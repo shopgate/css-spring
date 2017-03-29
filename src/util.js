@@ -61,7 +61,7 @@ export const calculateObsoleteFrames = (arr, prop) => {
 export const calculateObsoleteValues = (keyframes) => {
   return reduce(Object.keys(keyframes[0]), (accumulator, property) => {
     return Object.assign(accumulator, {
-      [property]: calculateObsoleteFrames(Object.values(keyframes), property),
+      [property]: calculateObsoleteFrames(Object.keys(keyframes).map(key => keyframes[key]), property),
     })
   }, {})
 }
