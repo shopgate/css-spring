@@ -23,7 +23,7 @@
     "buildWebpack": "mkdir -p dist && babel src --out-dir dist"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.16"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
